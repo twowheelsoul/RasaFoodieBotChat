@@ -1,0 +1,48 @@
+{
+  "email": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 25,
+    "confused_with": {}
+  },
+  "cuisine": {
+    "precision": 0.9285714285714286,
+    "recall": 1.0,
+    "f1-score": 0.962962962962963,
+    "support": 26,
+    "confused_with": {}
+  },
+  "price": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 14,
+    "confused_with": {}
+  },
+  "location": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 36,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.9805825242718447,
+    "recall": 1.0,
+    "f1-score": 0.9901960784313726,
+    "support": 101
+  },
+  "macro avg": {
+    "precision": 0.9821428571428572,
+    "recall": 1.0,
+    "f1-score": 0.9907407407407407,
+    "support": 101
+  },
+  "weighted avg": {
+    "precision": 0.9816124469589815,
+    "recall": 1.0,
+    "f1-score": 0.9904657132379905,
+    "support": 101
+  }
+}

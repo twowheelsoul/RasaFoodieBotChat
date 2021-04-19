@@ -1,0 +1,78 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: utter_ask_budget
+  - intent: restaurant_search
+    entities:
+    - price: high
+  - slot_was_set:
+    - price: high
+  - action: action_search_restaurants
+  - action: utter_email_conf
+  - intent: email_confirmation
+    entities:
+    - email: asdas@asdasd.com
+  - slot_was_set:
+    - email: asdas@asdasd.com
+  - action: action_sendemail
+  - action: utter_email_sent
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: rishikesh
+  - slot_was_set:
+    - location: rishikesh
+  - action: action_chklocation
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+  - slot_was_set:
+    - cuisine: American
+  - action: utter_ask_budget
+  - intent: restaurant_search
+    entities:
+    - price: high
+  - slot_was_set:
+    - price: high
+  - action: action_search_restaurants
+  - slot_was_set:
+    - emailbody: "Found following restaurants : \n\nName: The California Boulevard\nAddress : J-2/5, 1st & 2nd Floor, BK Dutt Market, Rajouri Garden, New Delhi\nAvg Cost for two is :2000\nRating : 4.6\n\n\nName: Owl is Well\nAddress : Greater Kailash (GK) 1, New Delhi\nAvg Cost for two is :1000\nRating : 4.5\n\n\nName: 38 Barracks\nAddress : M-38, Outer Circle, Connaught Place, New Delhi\nAvg Cost for two is :1600\nRating : 4.4\n\n\nName: The Feast House\nAddress : 1-B, Pusa Road, Near Karol Bagh Metro Station, Karol Bagh, New Delhi\nAvg Cost for two is :1050\nRating : 4.3\n\n\nName: Andrea's Eatery\nAddress : Shop 48A-51, First Floor, District Centre, Saket, New Delhi\nAvg Cost for two is :2000\nRating : 4.3\n\n\n \n \n \n"
+  - action: utter_email_conf
+  - intent: email_confirmation
+    entities:
+    - email: rahul.seith@gmail.com
+  - slot_was_set:
+    - email: rahul.seith@gmail.com
+  - action: action_sendemail
+  - action: utter_email_sent

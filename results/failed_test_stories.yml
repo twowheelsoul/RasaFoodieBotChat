@@ -1,0 +1,13 @@
+version: "2.0"
+stories:
+- story: interactive_story_1 (/Users/rahulku3/Documents/ai/Rasa_Chat_bot/tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location  # predicted: utter_greet
+  - intent: restaurant_search  # predicted: restaurant_search: [mumbai](location)
+  - slot_was_set:
+    - location: mumbai
+  - action: action_chklocation  # predicted: action_default_fallback
+  - action: utter_ask_cuisine  # predicted: action_listen

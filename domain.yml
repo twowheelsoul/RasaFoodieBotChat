@@ -1,0 +1,92 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- email_confirmation
+- restaurant_search
+- affirm
+- goodbye
+- deny
+entities:
+- cuisine
+- email
+- location
+- price
+slots:
+  cuisine:
+    type: text
+    influence_conversation: true
+  email:
+    type: text
+    influence_conversation: true
+  emailbody:
+    type: text
+    influence_conversation: true
+  location:
+    type: text
+    influence_conversation: true
+  price:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hi there! How may I help you?
+  utter_goodbye:
+  - text: Bye
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_location:
+  - text: In what location?
+  utter_email_conf:
+  - text: Should I send you details of all the restaurants on email?
+  utter_ask_email_id:
+  - text: To what email id should I send it to?
+  utter_email_sent:
+  - text: Sent. Bon Appetit!
+  - text: Sent.
+  utter_ask_budget:
+  - buttons:
+    - payload: low
+      title: Lesser than Rs. 300
+    - payload: medium
+      title: Rs. 300 to 700
+    - payload: high
+      title: More than 700
+    text: What's the average budget for two people?
+  utter_no_results_found:
+  - text: Sorry, No results found for your criteria. Would you like to search for some other restaurants?
+  utter_budget_error:
+  - text: Sorry, I couldn't get you. Please choose one of the budget options from the above mentioned options.
+  utter_cuisine_error:
+  - text: Sorry, I couldn't get you. Please choose one of the cuisine options from the above mentioned options.
+actions:
+- action_chklocation
+- action_search_restaurants
+- action_sendemail
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_email_id
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_email_conf
+- utter_email_sent
+- utter_goodbye
+- utter_greet
+- utter_no_results_found

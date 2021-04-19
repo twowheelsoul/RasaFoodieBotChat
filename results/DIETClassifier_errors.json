@@ -1,0 +1,52 @@
+[
+  {
+    "text": "I am looking for mexican indian fusion",
+    "entities": [
+      {
+        "start": 17,
+        "end": 24,
+        "value": "mexican",
+        "entity": "cuisine"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cuisine",
+        "start": 17,
+        "end": 31,
+        "confidence_entity": 0.4486846327781677,
+        "value": "mexican indian",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I want to know low priced mexican cuisine restaurants",
+    "entities": [
+      {
+        "start": 15,
+        "end": 18,
+        "value": "low",
+        "entity": "price"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "price",
+        "start": 15,
+        "end": 18,
+        "confidence_entity": 0.9924582242965698,
+        "value": "low",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "cuisine",
+        "start": 26,
+        "end": 33,
+        "confidence_entity": 0.6834744811058044,
+        "value": "mexican",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]
